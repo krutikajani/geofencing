@@ -35,6 +35,27 @@ Go ahead and create one and remove it if you haven't done so already.
 
 You will need to create more later on, when using Grafana, Node-RED and the Bash scripts.
 
-### Objects in IoTOpen
+# Objects in IoTOpen
 There are various objects associated with IoTOpen platform and they are very important in the way we access data. Here is the heirarchy of these objects.
+
+## Organization
+Organization is the object under which IoTOpen data will be accessible for the specific company and it will security boundry for various companies data.
+
+## User
+A user is the actual user of the platform for that specific organization. A user will authenticate and query various API endpoints to fetch data.
+
+Alongwith Organization and User there are three more interesting central objects that actually builds up the logic for IoT. 
+
+## Device
+A device typically represents some hardware. E.g. a motion sensor, a wall plug, a switch, a thermometer, a GPS-tracker or any other sensor or actuator.
+
+## Function
+A function is something you can measure or control. For instance a temperature is something you can measure. Humidity is also something you can measure. A switch is something you can control. Typically, a device has one or more functions. E.g. a motion sensor might have both a motion function and a light function. It might also be equipped with a temperature function.
+
+A function can belong to a device but doesn't have to. You can have functions not belonging to a device if you wish. However, both functions and devices must belong to an installation.
+
+## Installation
+An installation is a logical object. It represents a collection of devices and functions grouped together in some way. An example might be a house, a ship, a floor in a building, a part of a city, an IoT application or something else.
+
+
 
