@@ -61,3 +61,122 @@ An installation is a logical object. It represents a collection of devices and f
 API endpoints can be queried and data can be fetched from those endpoints via curl, postman or they can be fetched from Node-red nodes and passed on to other flows.
 
 ## Sample requests using curl
+
+### Get a list of installations
+
+```
+ curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/installation | jq
+[
+  {
+    "id": 64,
+    "name": "Kultur och Fritid GIOTIS",
+    "client_id": 64,
+    "created": 1666958735,
+    "organization_id": 22,
+    "notes": "",
+    "users": [
+      31,
+      91,
+      112,
+      115,
+      130,
+      133,
+      151,
+      187,
+      220,
+      223
+    ],
+    "meta": {},
+    "protected_meta": {}
+  }
+]
+```
+
+### Find devices
+
+```
+curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/devicex/64 | jq
+[
+  {
+    "id": 250,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1666952239,
+    "updated": 1708517728,
+    "meta": {
+      "eui": "70b3d5705001378d",
+      "lora_manager.decoder_name": "digital_matter.oyster",
+      "manufacturer": "Digital Matter",
+      "name": "Digital Matter - 70b3d5705001378d - Ismaskin"
+    },
+    "protected_meta": {}
+  },
+  {
+    "id": 709,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1674028148,
+    "updated": 1674556631,
+    "meta": {
+      "eui": "70b3d57050013b83",
+      "lora_manager.decoder_name": "digital_matter.oyster",
+      "manufacturer": "Digital Matter",
+      "name": "Digital Matter - 70b3d57050013b83 - Skotersläp"
+    },
+    "protected_meta": {}
+  },
+  {
+    "id": 712,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1674035973,
+    "updated": 1705333575,
+    "meta": {
+      "eui": "70b3d5705001390d",
+      "lora_manager.decoder_name": "digital_matter.oyster",
+      "manufacturer": "Digital Matter",
+      "name": "Digital Matter - 70b3d5705001390d - Stora Pistmaskinen"
+    },
+    "protected_meta": {}
+  },
+  {
+    "id": 1060,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1704280864,
+    "updated": 1704281711,
+    "meta": {
+      "eui": "24e124136d211967",
+      "lora_manager.decoder_name": "milesight",
+      "manufacturer": "Milesight",
+      "name": "Milesight - 24e124136d211967 - Tempsensor"
+    },
+    "protected_meta": {}
+  }
+]
+```
+
+### Get data from devices and functions
+
+The data is separated from the devices and functions and can be retrieved in some different ways.
+
+Via the status of an installation you get all the current (i.e. last known) status of all functions.
+`
+curl -H  "X-API-Key: (enter your API key)" https://iot.skekraft.se/api/v2/status/64
+`
+Note that the key between the function and the data is the topic that you can find via the function. Normally it is topic_read.
+```
+curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/status/64\?topics\=obj/lora/70b3d5705001378d/latitude | jq
+[
+  {
+    "client_id": 64,
+    "installation_id": 64,
+    "timestamp": 1709466290,
+    "value": 64.7564984,
+    "topic": "obj/lora/70b3d5705001378d/latitude",
+    "msg": "u7wbmk89gnhr"
+  }
+]
+```
+
+
