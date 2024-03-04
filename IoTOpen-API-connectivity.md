@@ -155,3 +155,26 @@ curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/device
   }
 ]
 ```
+
+### Get data from devices and functions
+
+The data is separated from the devices and functions and can be retrieved in some different ways.
+
+Via the status of an installation you get all the current (i.e. last known) status of all functions.
+`
+curl -H  "X-API-Key: (enter your API key)" https://iot.skekraft.se/api/v2/status/64
+`
+Note that the key between the function and the data is the topic that you can find via the function. Normally it is topic_read.
+```
+curl -H  "X-API-Key: V6WE142b+oi9DruvoqEU82i7OIN1he_6EM1FBSxbUedL7MwULSuZt_hZOd+rw1j2" https://iot.skekraft.se/api/v2/status/64\?topics\=obj/lora/70b3d5705001378d/latitude | jq
+[
+  {
+    "client_id": 64,
+    "installation_id": 64,
+    "timestamp": 1709466290,
+    "value": 64.7564984,
+    "topic": "obj/lora/70b3d5705001378d/latitude",
+    "msg": "u7wbmk89gnhr"
+  }
+]
+```
