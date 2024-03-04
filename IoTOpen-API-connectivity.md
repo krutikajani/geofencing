@@ -178,3 +178,7 @@ curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/status
   }
 ]
 ```
+
+## Fetching data using Node-RED
+
+In order to fetch data from IoT open using Node-RED we need a Node-RED set up and a module @iotopen/node-red-contrib-lynx insatlled to work with the lynx nodes.
