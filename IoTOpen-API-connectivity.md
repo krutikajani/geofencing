@@ -57,8 +57,14 @@ A function can belong to a device but doesn't have to. You can have functions no
 ## Installation
 An installation is a logical object. It represents a collection of devices and functions grouped together in some way. An example might be a house, a ship, a floor in a building, a part of a city, an IoT application or something else.
 
-### API endpoints and fetching data
+# API endpoints and fetching data
 API endpoints can be queried and data can be fetched from those endpoints via curl, postman or they can be fetched from Node-red nodes and passed on to other flows.
+
+## Sample requests using curl
+
+### Fetching installation details
+
+![Installation Information](./images/installation.png)
 
 
 
