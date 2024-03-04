@@ -62,11 +62,31 @@ API endpoints can be queried and data can be fetched from those endpoints via cu
 
 ## Sample requests using curl
 
-### Fetching installation details
+### Get a list of installations
 
-![Installation Information](./images/installation.png)
-
-
-
-
-
+'''
+ curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/installation | jq
+[
+  {
+    "id": 64,
+    "name": "Kultur och Fritid GIOTIS",
+    "client_id": 64,
+    "created": 1666958735,
+    "organization_id": 22,
+    "notes": "",
+    "users": [
+      31,
+      91,
+      112,
+      115,
+      130,
+      133,
+      151,
+      187,
+      220,
+      223
+    ],
+    "meta": {},
+    "protected_meta": {}
+  }
+]'''
