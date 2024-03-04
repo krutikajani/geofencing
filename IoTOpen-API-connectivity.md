@@ -91,3 +91,67 @@ API endpoints can be queried and data can be fetched from those endpoints via cu
   }
 ]
 ```
+
+### Find devices
+
+```
+curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/devicex/64 | jq
+[
+  {
+    "id": 250,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1666952239,
+    "updated": 1708517728,
+    "meta": {
+      "eui": "70b3d5705001378d",
+      "lora_manager.decoder_name": "digital_matter.oyster",
+      "manufacturer": "Digital Matter",
+      "name": "Digital Matter - 70b3d5705001378d - Ismaskin"
+    },
+    "protected_meta": {}
+  },
+  {
+    "id": 709,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1674028148,
+    "updated": 1674556631,
+    "meta": {
+      "eui": "70b3d57050013b83",
+      "lora_manager.decoder_name": "digital_matter.oyster",
+      "manufacturer": "Digital Matter",
+      "name": "Digital Matter - 70b3d57050013b83 - Skotersläp"
+    },
+    "protected_meta": {}
+  },
+  {
+    "id": 712,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1674035973,
+    "updated": 1705333575,
+    "meta": {
+      "eui": "70b3d5705001390d",
+      "lora_manager.decoder_name": "digital_matter.oyster",
+      "manufacturer": "Digital Matter",
+      "name": "Digital Matter - 70b3d5705001390d - Stora Pistmaskinen"
+    },
+    "protected_meta": {}
+  },
+  {
+    "id": 1060,
+    "installation_id": 64,
+    "type": "lora",
+    "created": 1704280864,
+    "updated": 1704281711,
+    "meta": {
+      "eui": "24e124136d211967",
+      "lora_manager.decoder_name": "milesight",
+      "manufacturer": "Milesight",
+      "name": "Milesight - 24e124136d211967 - Tempsensor"
+    },
+    "protected_meta": {}
+  }
+]
+```
