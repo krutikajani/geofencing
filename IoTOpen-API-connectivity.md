@@ -64,7 +64,7 @@ API endpoints can be queried and data can be fetched from those endpoints via cu
 
 ### Get a list of installations
 
-'''
+```
  curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/installation | jq
 [
   {
@@ -89,4 +89,5 @@ API endpoints can be queried and data can be fetched from those endpoints via cu
     "meta": {},
     "protected_meta": {}
   }
-]'''
+]
+```
