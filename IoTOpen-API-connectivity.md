@@ -166,7 +166,7 @@ curl -H  "X-API-Key: (enter your API key)" https://iot.skekraft.se/api/v2/status
 `
 Note that the key between the function and the data is the topic that you can find via the function. Normally it is topic_read.
 ```
-curl -H  "X-API-Key: V6WE142b+oi9DruvoqEU82i7OIN1he_6EM1FBSxbUedL7MwULSuZt_hZOd+rw1j2" https://iot.skekraft.se/api/v2/status/64\?topics\=obj/lora/70b3d5705001378d/latitude | jq
+curl -H  "X-API-Key: (Enter your API key)" https://iot.skekraft.se/api/v2/status/64\?topics\=obj/lora/70b3d5705001378d/latitude | jq
 [
   {
     "client_id": 64,
