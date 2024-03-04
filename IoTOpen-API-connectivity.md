@@ -60,6 +60,12 @@ An installation is a logical object. It represents a collection of devices and f
 ### API endpoints and fetching data
 API endpoints can be queried and data can be fetched from those endpoints via curl, postman or they can be fetched from Node-red nodes and passed on to other flows.
 
+## Sample requests using curl
+
+# Fetching installation details
+
+![Installation Information](./images/installation.png)
+
 
 
 
